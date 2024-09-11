@@ -28,6 +28,9 @@ How to use
 > Aurateur: !bet 3<br/>
 > Nightbot: Which will be next? "Goomba" or "Koopa" or "Boo"
 
+<br/>
+<br/>
+
 Code explained in human words
 ----
 I can't include this in the nightbot code so I'll put it here
