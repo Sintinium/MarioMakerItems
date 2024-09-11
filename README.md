@@ -31,9 +31,6 @@ Nightbot: Which will be next? "Goomba" or "Koopa"
 
 Aurateur: !bet 3
 Nightbot: Which will be next? "Goomba" or "Koopa" or "Boo"
-
-Aurateur: !bet 5
-etc...
 ```
 #### Code explained in human words:
 I can't include this in the nightbot code so I'll put it here
