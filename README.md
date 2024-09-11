@@ -19,20 +19,17 @@ shuffled = items.sort(() => 0.5 - Math.random()).slice(0, itemCount);
 3) Set the Userlevel to Owner or Moderator
 4) Done
 
-[Click here](https://github.com/Sintinium/MarioMakerItems/blob/main/items.json) to see the list of items. I tried to keep it exactly how you format the predictions but if something is wrong I'll happily correct it. I also removed things you never use like slopes, 3D world items, etc...
+> [Click here](https://github.com/Sintinium/MarioMakerItems/blob/main/items.json) to see the list of items. I tried to keep it exactly how you format the predictions but if something is wrong I'll happily correct it. I also removed things you never use like slopes, 3D world items, etc...
 
-Extra info
+How to use
 --------
+> Aurateur: !bet<br/>
+> Nightbot: Which will be next? "Goomba" or "Koopa" <br/>
+> Aurateur: !bet 3<br/>
+> Nightbot: Which will be next? "Goomba" or "Koopa" or "Boo"
 
-#### Example:
-```
-Aurateur: !bet
-Nightbot: Which will be next? "Goomba" or "Koopa"
-
-Aurateur: !bet 3
-Nightbot: Which will be next? "Goomba" or "Koopa" or "Boo"
-```
-#### Code explained in human words:
+Code explained in human words
+----
 I can't include this in the nightbot code so I'll put it here
 ```JavaScript
 /* Tells nightbot this runs code */
