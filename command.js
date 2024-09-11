@@ -19,8 +19,9 @@ $(eval
 
 /* inital item count 2 */
 itemCount = 2;
+
+/* Checks if there's a number 2 thru 9 after !bet. If it is set itemCount to it */
 arg1 = $(1);
-/* Checks if there's a number 2 thru 9 after !bet. If it is set itemCount it it */
 if (arg1 != null && arg1.toString().match(/^[2-9]+$/) != null) { 
     itemCount = parseInt($(1)); 
 } 
