@@ -21,9 +21,10 @@ shuffled = items.sort(() => 0.5 - Math.random()).slice(0, itemCount);
 
 [Click here](https://github.com/Sintinium/MarioMakerItems/blob/main/items.json) to see the list of items. I tried to keep it exactly how you format the predictions but if something is wrong I'll happily correct it. I also removed things you never use like slopes, 3D world items, etc...
 
+Extra info
 --------
 
-### Example:
+#### Example:
 ```
 Aurateur: !bet
 Nightbot: Which will be next? "Goomba" or "Koopa"
@@ -34,16 +35,12 @@ Nightbot: Which will be next? "Goomba" or "Koopa" or "Boo"
 Aurateur: !bet 5
 etc...
 ```
-
-<br/><br/>
-
--------
-
-### Code documentation: (Just incase you wonder how it works)
+#### Code explained in human words:
 I can't include this in the nightbot code so I'll put it here
 ```JavaScript
+/* Tells nightbot this runs code */
 $(eval
-/* List of items from the URL 'https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json' */
+/* List of items from the URL */
 items = $(urlfetch json https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json);
 
 /* Bet defaults to 2 things. This checks if you include a number between 2 and 9 in your command (ex: !bet 3) */
