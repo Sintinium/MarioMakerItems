@@ -3,17 +3,23 @@ Instructions
 1) Create a custom command in nightbot. Set command field to !bet
 2) In the message field paste the following:
 ```JavaScript
-$(eval
-  
+$(eval 
+
 items = $(urlfetch json https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json);
+
 itemCount = 2;
 arg1 = $(1);
 if (arg1 != null && arg1.toString().match(/^[2-9]+$/) != null) { 
     itemCount = parseInt(arg1); 
-} 
-shuffled = items.sort(() => 0.5 - Math.random()).slice(0, itemCount);
+}
+picked = [];
+for (var i = 0; i < itemCount; i++) {
+  rand = Math.floor(Math.random() * items.length);
+  picked.push(items[rand]);
+  items.splice(rand, 1);
+}
 
-'@$(user) Which will be next? "' + shuffled.join('" or "') + '"';
+'@$(user) Which will be next? "' + picked.join('" or "') + '"';
 )
 ```
 3) Set the Userlevel to Owner or Moderator
@@ -48,7 +54,12 @@ if (arg1 != null && arg1.toString().match(/^[2-9]+$/) != null) {
 }
 
 /* Shuffles the items into a random order. Then takes the number of items that you asked for in the command (defaults to 2) */
-shuffled = items.sort(() => 0.5 - Math.random()).slice(0, itemCount);
+picked = [];
+for (var i = 0; i < itemCount; i++) {
+  rand = Math.floor(Math.random() * items.length); // random index
+  picked.push(items[rand]); // adds it to the picked array
+  items.splice(rand, 1); // removes it from the items array so there's no duplicates
+}
 
 /* Prints it out in chat */
 '@$(user) Which will be next? "' + shuffled.join('" or "') + '"';
