@@ -7,19 +7,20 @@ $(eval
 
 items = $(urlfetch json https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json);
 
-itemCount = 2;
-arg1 = $(1);
-if (arg1 != null && arg1.toString().match(/^[2-9]+$/) != null) { 
-    itemCount = parseInt(arg1); 
-}
+count = parseInt($(1));
+if (isNaN(count)) count = 2;
+
 picked = [];
-for (var i = 0; i < itemCount; i++) {
+for (var i = 0; i < Math.min(count, items.length); i++) {
   rand = Math.floor(Math.random() * items.length);
-  picked.push(items[rand]);
+  picked.push("'" + items[rand] + "'");
   items.splice(rand, 1);
 }
-
-'@$(user) Which will be next? "' + picked.join('" or "') + '"';
+format = new Intl.ListFormat('en', {
+    style: 'long',
+    type: 'disjunction'
+});
+"@$(user) Which will be next? " + format.format(picked); 
 )
 ```
 3) Set the Userlevel to Owner or Moderator
@@ -46,22 +47,24 @@ $(eval
 /* List of items from the URL */
 items = $(urlfetch json https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json);
 
-/* Bet defaults to 2 things. This checks if you include a number between 2 and 9 in your command (ex: !bet 3) */
-itemCount = 2;
-arg1 = $(1);
-if (arg1 != null && arg1.toString().match(/^[2-9]+$/) != null) { 
-    itemCount = parseInt(arg1); 
-}
+/* Bet defaults to 2 items. This checks if you include a number in your command (ex: !bet 3) */
+count = parseInt($(1));
+if (isNaN(count)) count = 2;
 
-/* Shuffles the items into a random order. Then takes the number of items that you asked for in the command (defaults to 2) */
+/* A better randomizer that adds tick marks (') around each item (put here because Nightbot has a character limit) */
 picked = [];
-for (var i = 0; i < itemCount; i++) {
+for (var i = 0; i < Math.min(count, items.length); i++) {
   rand = Math.floor(Math.random() * items.length); // random index
-  picked.push(items[rand]); // adds it to the picked array
+  picked.push("'" + items[rand] + "'"); // adds it to the picked array
   items.splice(rand, 1); // removes it from the items array so there's no duplicates
 }
 
+/* Formats the list using the built in formatter. (ex: Item1, Item2, or Item3 | or just Item1 or Item2)*/
+format = new Intl.ListFormat('en', {
+    style: 'long',
+    type: 'disjunction'
+});
 /* Prints it out in chat */
-'@$(user) Which will be next? "' + shuffled.join('" or "') + '"';
+"@$(user) Which will be next? " + format.format(picked); 
 )
 ```
