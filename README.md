@@ -30,6 +30,8 @@ format = new Intl.ListFormat('en', {
 
 How to use
 --------
+Test it here! https://www.programiz.com/online-compiler/5ZznHiG4XcPnG
+
 > User: !bet<br/>
 > Nightbot: Which will be next? 'Goomba' or 'Koopa' <br/>
 > User: !bet 3<br/>
