@@ -2,8 +2,7 @@ $(eval
 
 items = $(urlfetch json https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json);
 
-count = parseInt($(1));
-if (isNaN(count)) count = 2;
+count = parseInt($(1)) || 2;
 
 picked = [];
 for (var i = 0; i < Math.min(count, items.length); i++) {
