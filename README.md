@@ -31,9 +31,9 @@ format = new Intl.ListFormat('en', {
 How to use
 --------
 > Aurateur: !bet<br/>
-> Nightbot: Which will be next? "Goomba" or "Koopa" <br/>
+> Nightbot: Which will be next? 'Goomba' or 'Koopa' <br/>
 > Aurateur: !bet 3<br/>
-> Nightbot: Which will be next? "Goomba" or "Koopa" or "Boo"
+> Nightbot: Which will be next? 'Goomba', 'Koopa', or 'Boo'
 
 <br/>
 <br/>
