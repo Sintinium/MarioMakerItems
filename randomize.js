@@ -17,4 +17,4 @@ function shuffle(array) {
 
 fetch('https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json')
   .then(response => response.json())
-  .then(response => console.log(JSON.stringify(shuffle(response), null, 4)));
+  .then(response => console.log(JSON.stringify(shuffle(response), null, 2)));
