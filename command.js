@@ -2,17 +2,9 @@ $(eval
 
 items = $(urlfetch json https://raw.githubusercontent.com/Sintinium/MarioMakerItems/main/items.json);
 
-count = parseInt($(1)) || 2;
-
 picked = [];
-for (var i = 0; i < Math.min(count, items.length); i++) {
-  rand = Math.floor(Math.random() * items.length);
-  picked.push("'" + items[rand] + "'");
-  items.splice(rand, 1);
+for (var i = 0; i < Math.min(2, items.length); i++) {
+  picked.push("'" + items.splice(Math.floor(Math.random() * items.length), 1)[0] + "'");
 }
-format = new Intl.ListFormat('en', {
-    style: 'long',
-    type: 'disjunction'
-});
-"@$(user) Which will be next? " + format.format(picked); 
+"@$(user) Which will be next? " + new Intl.ListFormat('en', {style: 'long', type: 'disjunction'}).format(picked); 
 )
