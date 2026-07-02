@@ -1,5 +1,5 @@
-Instructions
------
+# Instructions
+
 1) Create a custom command in nightbot. Set command field to !bet
 2) In the message field paste the following:
 ```JavaScript
@@ -8,11 +8,15 @@ Instructions
 3) Set the Userlevel to Owner or Moderator
 4) Done
 
-Result
-----
+------
+
+
+
+#### Result
+
 This command returns the following format: 
 ```
-"@Username [URL RESULT]"
+@Username [URL RESULT]
 ```
 The URL only ever returns `Which will be next? '$item1' or '$item2'`
 
