@@ -14,6 +14,6 @@ This command returns the following format:
 ```
 "@Username [URL RESULT]"
 ```
-The URL only ever returns two items such as: "Mushroom or Fireflower"
+The URL only ever returns `Which will be next? '$item1' or '$item2'`
 
 > [Click here](https://github.com/Sintinium/MarioMakerItems/blob/main/items.json) to see the list of items. I tried to keep it exactly how you format the predictions but if something is wrong I'll happily correct it. I also removed things you never use like slopes, 3D world items, etc...
